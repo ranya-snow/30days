@@ -5,7 +5,7 @@ import numpy as np
 st.header('Line chart')
 
 chart_data = pd.DataFrame(
-  np.random.randn(50,3),
+  np.random.randn(50,15),
   columns = ['snowfall', 'temp', 'rainfall'])
 
 st.line_chart(chart_data)
