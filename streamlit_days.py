@@ -1,11 +1,14 @@
-
+#import libs
 import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotfly.express as px
+from datetime import datetime
 
-st.write('Hello world!')
+#define functions
 
-st.header('st.button')
 
-if st.button('Say hello'):
-  st.write('Why hello there')
-else:
-  st.write('Goodbye')
+#load data
+df_agg = pd.read_csv('Aggregated_Metrics_By_Video.csv')
+st.write(df_agg)
