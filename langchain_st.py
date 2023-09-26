@@ -19,7 +19,7 @@ with st.form('my_form'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
     generate_response(text)
-st.stop()
+
 benefits = {
     'Benefits': [
         "Scalability", 
@@ -122,4 +122,4 @@ with st.form('Define data architecture details'):
   prompt = f"Generate a description of a data platform using the following informaiton elements: Benefits of the platform are {benefit}, risks of the platform are {risk}, the data sources being loaded in are {source}, the types of processing are {process} and the data is being used in the following ways: {consumption}"
   
   if submit:
-    st.write(generate_response(prompt))
+    st.info(generate_response(prompt))
