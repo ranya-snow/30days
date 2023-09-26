@@ -118,5 +118,8 @@ with st.form('Define data architecture details'):
   process = st.multiselect("How are you processing this data?", processing)
   consumption = st.multiselect("How is your data being consumed?", data_out)
   submit = st.form_submit_button("Generate use case description")
+  
   prompt = f"Generate a description of a data platform using the following informaiton elements: Benefits of the platform are {benefit}, risks of the platform are {risk}, the data sources being loaded in are {source}, the types of processing are {process} and the data is being used in the following ways: {consumption}"
-  st.write(prompt)
+  
+  if submit:
+    st.write(generate_response(prompt))
