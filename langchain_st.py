@@ -1,6 +1,7 @@
 # It's only 18 lines of code:
 
 import streamlit as st
+import pandas as pd
 from langchain.llms import OpenAI
 
 st.title('🦜🔗 Quickstart App')
