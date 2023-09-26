@@ -90,7 +90,7 @@ processing = {
 }
 
 # Create DataFrame for processing
-processing = pd.DataFrame(processing_data)
+processing = pd.DataFrame(processing)
 
 data_out = {
     'Data_Out': [
