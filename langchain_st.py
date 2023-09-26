@@ -18,3 +18,102 @@ with st.form('my_form'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
     generate_response(text)
+
+benefits = {
+    'Benefits': [
+        "Scalability", 
+        "Cost-Efficiency", 
+        "Data Integrity", 
+        "Real-time Insights", 
+        "User Engagement", 
+        "Compliance", 
+        "Data Security", 
+        "Business Agility", 
+        "Competitive Advantage", 
+        "Operational Efficiency"
+    ]
+}
+
+# Create DataFrame
+benefits = pd.DataFrame(benefits)
+
+risks = {
+    'Risks': [
+        "Data Leakage", 
+        "Compliance Violations", 
+        "Vendor Lock-in", 
+        "Complexity", 
+        "Cost Overruns", 
+        "Data Inconsistency", 
+        "Performance Bottlenecks", 
+        "Skill Gaps", 
+        "Data Bias", 
+        "Obsolescence"
+    ]
+}
+
+# Create DataFrame for risks
+risks = pd.DataFrame(risks)
+
+data_in = {
+    'Data_In': [
+        "Raw Logs", 
+        "User Events", 
+        "Transactional Data", 
+        "Social Media Feeds", 
+        "IoT Device Data", 
+        "Third-Party APIs", 
+        "Batch Files", 
+        "Real-time Streams", 
+        "Web Scraping", 
+        "Manual Entry"
+    ]
+}
+
+# Create DataFrame for data_in
+data_in = pd.DataFrame(data_in)
+
+processing = {
+    'Processing': [
+        "Data Cleansing", 
+        "Data Enrichment", 
+        "Data Aggregation", 
+        "Data Normalization", 
+        "Data Transformation (ETL/ELT)", 
+        "Data Indexing", 
+        "Data Joining", 
+        "Data Caching", 
+        "Machine Learning Models", 
+        "Real-time Analytics"
+    ]
+}
+
+# Create DataFrame for processing
+processing = pd.DataFrame(processing_data)
+
+data_out = {
+    'Data_Out': [
+        "Aggregated Metrics", 
+        "Data Warehouses", 
+        "Data Lakes", 
+        "Dashboards", 
+        "Reports", 
+        "Predictive Models", 
+        "Anomaly Detection Alerts", 
+        "Customer Segments", 
+        "Business Insights", 
+        "Data Visualizations"
+    ]
+}
+
+# Create DataFrame for Data_Out
+data_out = pd.DataFrame(data_out)
+
+
+with st.form('Define data architecture details'):
+  benefit = st.multiselect("Benefits of platform?", benefits)
+  risk = st.multiselect("Risks of platform?", risks)
+  source = st.multiselect("What data are you loading in?", data_in)
+  process = st.multiselect("How are you processing this data?", processing)
+  consumption = st.multiselect("How is your data being consumed?", data_out)
+  
